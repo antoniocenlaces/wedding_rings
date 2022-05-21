@@ -1,0 +1,31 @@
+<div>
+  <div class="selector-menu">
+    <div
+      class="boton"
+      [ngClass]="{ active: selectedRingIndex === 1 }"
+      (click)="setSelectedIndex(1)"
+    >
+      <i class="bi bi-alarm"></i>
+      Ring 1
+    </div>
+
+    <div
+      class="boton"
+      [ngClass]="{ active: selectedRingPair === true }"
+      (click)="setRingPair()"
+    >
+      <i class="bi bi-alarm"></i>
+      Ring Pair
+    </div>
+    <div
+      class="boton"
+      [ngClass]="{ active: selectedRingIndex === 2 }"
+      (click)="setSelectedIndex(2)"
+    >
+      <i class="bi bi-alarm"></i>
+      Ring 2
+    </div>
+  </div>
+
+  Visualizador
+</div>

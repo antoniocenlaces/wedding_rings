@@ -1,0 +1,423 @@
+<form [formGroup]="preciousMetalForm">
+  <div class="content">
+    <legend>Partition</legend>
+    <div class="partition-selector">
+      <div
+        class="partition-item"
+        [ngClass]="{ active: selectedPartition == 1 }"
+        (click)="setPartition(1)"
+      >
+        <p>Single coloured</p>
+        <img
+          class="img-fluid"
+          src="../../../../assets/img/partition_selector_single.png"
+          alt="Partition BI"
+        />
+      </div>
+      <div
+        class="partition-item"
+        [ngClass]="{ active: selectedPartition == 2 }"
+        (click)="setPartition(2)"
+      >
+        <p>Bi-coloured</p>
+        <img
+          class="img-fluid"
+          src="../../../../assets/img/partition_selector_bi.png"
+          alt="Partition BI"
+        />
+      </div>
+      <div
+        class="partition-item"
+        [ngClass]="{ active: selectedPartition == 3 }"
+        (click)="setPartition(3)"
+      >
+        <p>Tri-coloured</p>
+        <img
+          class="img-fluid"
+          src="../../../../assets/img/partition_selector_tri.png"
+          alt="Partition BI"
+        />
+      </div>
+    </div>
+
+    <mat-select
+      class="form-control"
+      formControlName="partition2"
+      [hidden]="selectedPartition !== 2"
+    >
+      <mat-option value="1_1">
+        <img
+          class="partitionSelectIcon"
+          src="../../../../assets/img/partition_bi_1_1.png"
+        />1:1
+      </mat-option>
+      <mat-option value="1_2">
+        <img
+          class="partitionSelectIcon"
+          src="../../../../assets/img/partition_bi_1_2.png"
+        />1:2
+      </mat-option>
+      <mat-option value="1_3">
+        <img
+          class="partitionSelectIcon"
+          src="../../../../assets/img/partition_bi_1_3.png"
+        />1:3
+      </mat-option>
+      <mat-option value="1_4">
+        <img
+          class="partitionSelectIcon"
+          src="../../../../assets/img/partition_bi_1_4.png"
+        />1:4
+      </mat-option>
+      <mat-option value="wave">
+        <img
+          class="partitionSelectIcon"
+          src="../../../../assets/img/partition_bi_wave.png"
+        />Wave
+      </mat-option>
+      <mat-option value="diagonal">
+        <img
+          class="partitionSelectIcon"
+          src="../../../../assets/img/partition_bi_diagonal.png"
+        />Diagonal
+      </mat-option>
+    </mat-select>
+    <mat-select
+      class="form-control"
+      formControlName="partition3"
+      [hidden]="selectedPartition !== 3"
+    >
+      <mat-option value="1_1_1">
+        <img
+          class="partitionSelectIcon"
+          src="../../../../assets/img/partition_tri_1_1_1.png"
+        />1:1:1
+      </mat-option>
+      <mat-option value="1_2_1">
+        <img
+          class="partitionSelectIcon"
+          src="../../../../assets/img/partition_tri_1_2_1.png"
+        />1:2:1
+      </mat-option>
+      <mat-option value="1_3_1">
+        <img
+          class="partitionSelectIcon"
+          src="../../../../assets/img/partition_tri_1_3_1.png"
+        />1:3:1
+      </mat-option>
+      <mat-option value="1_4_1">
+        <img
+          class="partitionSelectIcon"
+          src="../../../../assets/img/partition_tri_1_4_1.png"
+        />1:4:1
+      </mat-option>
+      <mat-option value="3_1_1">
+        <img
+          class="partitionSelectIcon"
+          src="../../../../assets/img/partition_tri_3_1_1.png"
+        />3:1:1
+      </mat-option>
+      <mat-option value="4_1_1">
+        <img
+          class="partitionSelectIcon"
+          src="../../../../assets/img/partition_tri_4_1_1.png"
+        />4:1:1
+      </mat-option>
+      <mat-option value="2_1_2">
+        <img
+          class="partitionSelectIcon"
+          src="../../../../assets/img/partition_tri_2_1_2.png"
+        />2:1:2
+      </mat-option>
+      <mat-option value="free">
+        <img
+          class="partitionSelectIcon"
+          src="../../../../assets/img/partition_tri_free.png"
+        />Free
+      </mat-option>
+    </mat-select>
+  </div>
+
+  <div
+    class="grid"
+    [ngClass]="{
+      x1: selectedPartition == 1,
+      x2: selectedPartition == 2,
+      x3: selectedPartition == 3
+    }"
+  >
+    <div class="column">
+      <mat-form-field appearance="fill">
+        <mat-label>Metal</mat-label>
+        <mat-select formControlName="metal1">
+          <mat-option value="YELLOW_GOLD">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_yellow_gold.png"
+            />Yellow Gold
+          </mat-option>
+          <mat-option value="WHITE_GOLD">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_white_gold.png"
+            />White Gold
+          </mat-option>
+          <mat-option value="RED_GOLD">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_rose_gold.png"
+            />Apricot Gold
+          </mat-option>
+          <mat-option value="PALLADIUM">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_palladium.png"
+            />Palladium
+          </mat-option>
+          <mat-option value="PLATINUM">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_platinum.png"
+            />Platinum
+          </mat-option>
+          <mat-option value="SILVER">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_silver.png"
+            />Silver
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Alloy</mat-label>
+        <mat-select formControlName="alloy1">
+          <mat-option value="9CT">9ct </mat-option>
+          <mat-option value="14CT">14ct </mat-option>
+          <mat-option value="18CT">18ct </mat-option>
+          <mat-option value="22CT">22ct </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Surface</mat-label>
+        <mat-select formControlName="surface1">
+          <mat-option value="POLISHED">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/surface_polished.png"
+            />Polished
+          </mat-option>
+          <mat-option value="HORIZONTAL_MATT">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/surface_horizontal_matt.png"
+            />Horizontal matt
+          </mat-option>
+          <mat-option value="VERTICAL_MATT">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/surface_vertical_matt.png"
+            />Vertical matt
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- <select class="form-select" aria-label="Select Surface Finishing" formControlName="surfaceSingle">
+                    <option value="POLISHED">Polished</option>
+                    <option value="HORIZONTAL_MATT">Horizontal matt</option>
+                    <option value="VERTICAL_MATT">Vertical matt</option>
+                    <option value="DIAGONAL_MATT">Diagonal matt</option>
+                    <option value="ICE_MATT">Ice matt</option>
+                    <option value="SAND_MATT_COARSE">Sand matt coarse</option>
+                    <option value="SAND_MATT_FINE">Sand matt fine</option>
+                    <option value="HAMMERED_MATT">Hammered matt</option>
+                    <option value="HAMMERED_POLISHED">Hammered polished</option>
+                    <option value="HAMMERED_SAND_MATT">Hammered sand matt</option>
+                    <option value="MILLED">Milled</option>
+                </select> -->
+    </div>
+    <div class="column" [hidden]="selectedPartition < 2">
+      <mat-form-field appearance="fill">
+        <mat-label>Metal</mat-label>
+        <mat-select formControlName="metal2">
+          <mat-option value="YELLOW_GOLD">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_yellow_gold.png"
+            />Yellow Gold
+          </mat-option>
+          <mat-option value="WHITE_GOLD">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_white_gold.png"
+            />White Gold
+          </mat-option>
+          <mat-option value="RED_GOLD">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_rose_gold.png"
+            />Apricot Gold
+          </mat-option>
+          <mat-option value="PALLADIUM">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_palladium.png"
+            />Palladium
+          </mat-option>
+          <mat-option value="PLATINUM">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_platinum.png"
+            />Platinum
+          </mat-option>
+          <mat-option value="SILVER">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_silver.png"
+            />Silver
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Alloy</mat-label>
+        <mat-select formControlName="alloy2">
+          <mat-option value="9CT">9ct </mat-option>
+          <mat-option value="14CT">14ct </mat-option>
+          <mat-option value="18CT">18ct </mat-option>
+          <mat-option value="22CT">22ct </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Surface</mat-label>
+        <mat-select formControlName="surface2">
+          <mat-option value="POLISHED">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/surface_polished.png"
+            />Polished
+          </mat-option>
+          <mat-option value="HORIZONTAL_MATT">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/surface_horizontal_matt.png"
+            />Horizontal matt
+          </mat-option>
+          <mat-option value="VERTICAL_MATT">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/surface_vertical_matt.png"
+            />Vertical matt
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- <select class="form-select" aria-label="Select Surface Finishing" formControlName="surfaceSingle">
+                            <option value="POLISHED">Polished</option>
+                            <option value="HORIZONTAL_MATT">Horizontal matt</option>
+                            <option value="VERTICAL_MATT">Vertical matt</option>
+                            <option value="DIAGONAL_MATT">Diagonal matt</option>
+                            <option value="ICE_MATT">Ice matt</option>
+                            <option value="SAND_MATT_COARSE">Sand matt coarse</option>
+                            <option value="SAND_MATT_FINE">Sand matt fine</option>
+                            <option value="HAMMERED_MATT">Hammered matt</option>
+                            <option value="HAMMERED_POLISHED">Hammered polished</option>
+                            <option value="HAMMERED_SAND_MATT">Hammered sand matt</option>
+                            <option value="MILLED">Milled</option>
+                        </select> -->
+    </div>
+    <div class="column" [hidden]="selectedPartition < 3">
+      <mat-form-field appearance="fill">
+        <mat-label>Metal</mat-label>
+        <mat-select formControlName="metal3">
+          <mat-option value="YELLOW_GOLD">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_yellow_gold.png"
+            />Yellow Gold
+          </mat-option>
+          <mat-option value="WHITE_GOLD">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_white_gold.png"
+            />White Gold
+          </mat-option>
+          <mat-option value="RED_GOLD">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_rose_gold.png"
+            />Apricot Gold
+          </mat-option>
+          <mat-option value="PALLADIUM">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_palladium.png"
+            />Palladium
+          </mat-option>
+          <mat-option value="PLATINUM">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_platinum.png"
+            />Platinum
+          </mat-option>
+          <mat-option value="SILVER">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/colormetal_silver.png"
+            />Silver
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Alloy</mat-label>
+        <mat-select formControlName="alloy3">
+          <mat-option value="9CT">9ct </mat-option>
+          <mat-option value="14CT">14ct </mat-option>
+          <mat-option value="18CT">18ct </mat-option>
+          <mat-option value="22CT">22ct </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Surface</mat-label>
+        <mat-select formControlName="surface3">
+          <mat-option value="POLISHED">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/surface_polished.png"
+            />Polished
+          </mat-option>
+          <mat-option value="HORIZONTAL_MATT">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/surface_horizontal_matt.png"
+            />Horizontal matt
+          </mat-option>
+          <mat-option value="VERTICAL_MATT">
+            <img
+              class="colourSelectIcon"
+              src="../../../../assets/img/surface_vertical_matt.png"
+            />Vertical matt
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- <select class="form-select" aria-label="Select Surface Finishing" formControlName="surfaceSingle">
+                            <option value="POLISHED">Polished</option>
+                            <option value="HORIZONTAL_MATT">Horizontal matt</option>
+                            <option value="VERTICAL_MATT">Vertical matt</option>
+                            <option value="DIAGONAL_MATT">Diagonal matt</option>
+                            <option value="ICE_MATT">Ice matt</option>
+                            <option value="SAND_MATT_COARSE">Sand matt coarse</option>
+                            <option value="SAND_MATT_FINE">Sand matt fine</option>
+                            <option value="HAMMERED_MATT">Hammered matt</option>
+                            <option value="HAMMERED_POLISHED">Hammered polished</option>
+                            <option value="HAMMERED_SAND_MATT">Hammered sand matt</option>
+                            <option value="MILLED">Milled</option>
+                        </select> -->
+    </div>
+  </div>
+</form>

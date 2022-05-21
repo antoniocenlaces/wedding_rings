@@ -1,0 +1,29 @@
+<div class="area">
+  <div class="prices">
+    <div class="row-price">
+      <div class="title">Ring 1</div>
+      <div class="price">
+        {{ price1 }}
+      </div>
+    </div>
+    <div class="row-price">
+      <div class="title">Ring 2</div>
+      <div class="price">
+        {{ price2 }}
+      </div>
+    </div>
+    <div class="row-price total">
+      <div class="title">Total Price</div>
+      <div class="price">
+        {{ total }}
+      </div>
+    </div>
+  </div>
+  <div class="pp"></div>
+  <div class="cta">
+    <div class="receivedit">Receive it on Jun 3, 2222</div>
+    <button class="button" (click)="addToShoppingBag.emit()">
+      Add to Shopping Bag
+    </button>
+  </div>
+</div>

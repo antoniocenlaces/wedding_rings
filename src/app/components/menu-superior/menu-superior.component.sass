@@ -1,0 +1,30 @@
+@import '../../../styles.sass'
+
+.menu
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+    color: white
+    align-items: center
+
+    .boton
+        display: flex
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        height: 100%
+        background-color: transparent
+        padding: 10px
+        border-radius: 10px 10px 0 0
+        border-bottom: 2px solid #ccc
+        &:hover
+            background-color: #f7f7f7
+        &.active
+            background-color: transparent
+            border: 1px solid #ccc
+            border-bottom: 1px solid white
+
+.texto
+    font-weight: 700
+    color: red
+    &.active
+        background-color: blue

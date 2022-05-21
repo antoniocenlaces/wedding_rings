@@ -1,0 +1,25 @@
+@import '../../../styles.sass'
+
+\:host
+    border: 1px solid #ccc
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+
+.selector-menu
+    display: flex
+    background-color: $background-selector
+    padding: 10px
+    margin-top: 5px
+    .boton
+        cursor: pointer
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        padding: 10px
+        &:hover
+            background-color: pink
+        &.active
+            border: 2px solid red

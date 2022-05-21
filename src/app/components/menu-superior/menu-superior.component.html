@@ -1,0 +1,57 @@
+<div class="menu">
+  <!-- <div class="boton" (click)="goBack()">
+        <i class="bi bi-chevron-left"></i>
+    </div> -->
+  <div
+    class="boton"
+    matTooltip="Profiles"
+    [ngClass]="{ active: index == 1 }"
+    (click)="setIndex(1)"
+  >
+    <img class="img-fluid" src="assets/img/menu_profile_icon.png" alt="" />
+  </div>
+  <div
+    class="boton"
+    matTooltip="Dimensions"
+    [ngClass]="{ active: index == 2 }"
+    (click)="setIndex(2)"
+  >
+    <img class="img-fluid" src="assets/img/menu_dimensions_icon.png" alt="" />
+  </div>
+
+  <div
+    class="boton"
+    matTooltip="Precious Metals"
+    [ngClass]="{ active: index == 3 }"
+    (click)="setIndex(3)"
+  >
+    <img class="img-fluid" src="assets/img/menu_metal_icon.png" alt="" />
+  </div>
+  <div
+    class="boton"
+    matTooltip="Grooves / Edges"
+    [ngClass]="{ active: index == 4 }"
+    (click)="setIndex(4)"
+  >
+    <img class="img-fluid" src="assets/img/menu_grooves_icon.png" alt="" />
+  </div>
+  <div
+    class="boton"
+    matTooltip="Stone Settings"
+    [ngClass]="{ active: index == 5 }"
+    (click)="setIndex(5)"
+  >
+    <img class="img-fluid" src="assets/img/menu_stone_icon.png" alt="" />
+  </div>
+  <div
+    class="boton"
+    matTooltip="Engraving"
+    [ngClass]="{ active: index == 6 }"
+    (click)="setIndex(6)"
+  >
+    <img class="img-fluid" src="assets/img/menu_engraving_icon.png" alt="" />
+  </div>
+  <!-- <div class="boton" (click)="goForward()">
+        <i class="bi bi-chevron-right"></i>
+    </div> -->
+</div>

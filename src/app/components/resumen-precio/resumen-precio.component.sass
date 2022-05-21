@@ -1,0 +1,33 @@
+.area
+    display: grid
+    grid-template-columns: 1fr 2px auto
+    background-color: #f7f7f7
+    width: 100%
+    padding: 20px
+    margin-top: 20px
+    grid-gap: 20px
+    .prices
+        .row-price
+            display: flex
+            justify-content: space-between
+            &.total
+                font-weight: 600
+                margin-top: 10px
+    .vertical-line
+        background: white
+    .cta
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        .receivedit
+            color: #666
+
+.button
+    border: none
+    padding: 10px 20px
+    background-color: black
+    color: white
+    text-transform: uppercase
+    font-weight: 600
+    &:hover
+        background-color: #333

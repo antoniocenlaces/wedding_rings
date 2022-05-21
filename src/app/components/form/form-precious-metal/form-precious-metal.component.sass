@@ -1,0 +1,54 @@
+.content
+    display: flex
+    flex-direction: column
+    padding: 4px
+.partition-selector
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    align-items: center
+    grid-column-gap: 5px
+    margin-bottom: 10px
+    .partition-item
+        padding: 10px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        text-align: center
+        border: 2px solid transparent
+        cursor: pointer
+        img
+            height: 100px
+        &.active
+            border: 2px solid #ff9600
+.grid
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: 10px
+
+    &.x1
+        grid-template-columns: 1fr
+    &.x2
+        grid-template-columns: 1fr 1fr
+    &.x3
+        grid-template-columns: 1fr 1fr 1fr
+
+    .column
+        display: flex
+        flex-direction: column
+
+.partitionSelectIcon
+    width: 50px
+    margin-right: 15px
+.partitionSelectedIcon
+    width: 50px
+    margin: 0px 50%
+.colourSelectIcon
+    width: 40px
+    margin-right: 15px
+.colourSelectedIcon
+    height: 44px
+    position: relative
+    top: -2px
+    left: -2px
+    border-radius: 0.5rem

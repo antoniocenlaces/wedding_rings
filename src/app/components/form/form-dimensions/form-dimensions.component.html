@@ -1,0 +1,108 @@
+<form [formGroup]="ringDimensionsForm">
+  <label for="ringWidth" class="form-label">Ring width</label>
+  <div class="ringDisplay">
+    <img
+      src="./assets/img/Dimensions_Width.png"
+      alt="Ring Width"
+      class="img-fluid"
+    />
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      name="ringWidth"
+      id="ringWidth"
+      formControlName="ringWidth"
+    >
+      <option value="1.5">1.50 mm</option>
+      <option value="2">2.00 mm</option>
+      <option value="2.5">2.50 mm</option>
+      <option value="3">3.00 mm</option>
+      <option value="3.5">3.50 mm</option>
+      <option value="4">4.00 mm</option>
+      <option value="4.5">4.50 mm</option>
+      <option value="5">5.00 mm</option>
+      <option value="5.5">5.50 mm</option>
+      <option value="6">6.00 mm</option>
+      <option value="6.5">6.50 mm</option>
+      <option value="7">7.00 mm</option>
+      <option value="7.5">7.50 mm</option>
+      <option value="8">8.00 mm</option>
+      <option value="8.5">8.50 mm</option>
+      <option value="9">9.00 mm</option>
+      <option value="9.5">9.50 mm</option>
+      <option value="10">10.00 mm</option>
+      <option value="10.5">10.50 mm</option>
+      <option value="11">11.00 mm</option>
+      <option value="11.5">11.50 mm</option>
+      <option value="12">12.00 mm</option>
+    </select>
+  </div>
+
+  <label for="ringThickness" class="form-label">Ring thickness</label>
+  <div class="ringDisplay">
+    <img
+      src="./assets/img/Dimensions_Thickness.png"
+      alt="Ring Thickness"
+      class="img-fluid"
+    />
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      name="ringThickness"
+      id="ringThickness"
+      formControlName="ringThickness"
+    >
+      <option value="1.2">1.20 mm</option>
+      <option value="1.3">1.30 mm</option>
+      <option value="1.4">1.40 mm</option>
+      <option value="1.5">1.50 mm</option>
+      <option value="1.6">1.60 mm</option>
+      <option value="1.7">1.70 mm</option>
+      <option value="1.8">1.80 mm</option>
+      <option value="1.9">1.90 mm</option>
+      <option value="2.0">2.00 mm</option>
+      <option value="2.1">2.10 mm</option>
+      <option value="2.2">2.20 mm</option>
+      <option value="2.3">2.30 mm</option>
+      <option value="2.4">2.40 mm</option>
+      <option value="2.5">2.50 mm</option>
+      <option value="2.6">2.60 mm</option>
+      <option value="2.7">2.70 mm</option>
+      <option value="2.8">2.80 mm</option>
+      <option value="2.9">2.90 mm</option>
+      <option value="3.0">3.00 mm</option>
+    </select>
+  </div>
+
+  <div class="form-check">
+    <input
+      type="checkbox"
+      id="automaticThickness"
+      name="automaticThickness"
+      formControlName="automaticThickness"
+      class="form-check-input"
+    />
+    <label for="automaticThickness" class="form-label"
+      >Automatically set the optimal thickness for the selected ring
+      width</label
+    >
+  </div>
+
+  <div class="ringSizeDisplay">
+    <img
+      src="./assets/img/Dimension_Size.png"
+      alt="Ring Size"
+      class="img-fluid"
+    />
+    <label for="ringIntPerimeter" class="form-label"
+      >Ring Internal<br />Perimeter (mm)</label
+    >
+    <input
+      type="number"
+      formControlName="ringIntPerimeter"
+      min="10"
+      max="35"
+      step="0.2"
+    />
+  </div>
+</form>
